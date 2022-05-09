@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="/web/js/pizza.js" defer></script>
+</head>
+<body>
+
+<div id="allpizza">
+
+    <li> {{ pizzas }} </li>
+    <li v-for="pizza in pizzas">
+
+        {{ pizza.name }} {{ pizza.ingredients }}
+
+    </li>
+</div>
+
+
+<a href="customPizza.html">custom</a>
+</body>
+</html>

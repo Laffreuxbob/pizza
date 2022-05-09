@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="/web/js/register.js" defer></script>
+
+
+</head>
+
+<header class="maincontent" id="header">
+    <h1>Register</h1>
+</header>
+
+<body>
+        <div id="register">
+            <form action ="/public/register" method="post">
+                <div>
+                    <label>Email</label>
+                    <input name="username">
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input name="password">
+                </div>
+                <div>
+                    <button v-on:click="register()" >
+                        register
+
+                    </button>
+                    <a href="../index.html">index</a>
+                </div>
+            </form>
+
+        </div>
+
+
+</body>
+
+<footer class="maincontent" id="footer">
+    <h1>mention legales</h1>
+</footer>
+
+</html>
