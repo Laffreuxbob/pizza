@@ -21,11 +21,11 @@ public class pizzaService {
     @Autowired
     private PizzaDAO dao;
 
-    public List<Pizza> getAllPizza() throws SQLException {
-        System.out.println("SERVIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIICE");
+    public List<Pizza> getAllPizzaObject() throws SQLException {
+        System.out.println("PIZZA SERVICE getAllPizzaObject");
 
         try {
-            return dao.getAllPizza();
+            return dao.getAllPizzaObject();
         } catch (SQLException e) {
             System.out.println("ERROR");
             logger.error(e.getMessage(), e);
@@ -33,6 +33,21 @@ public class pizzaService {
             throw e;
 
         }
+    }
+
+    //public List<String> getAllPizza() throws SQLException {
+    public void getAllPizza() throws SQLException {
+        System.out.println("PIZZA SERVICE GETALLPIZZA");
+
+//        try {
+//            //return dao.getAllPizza();
+//        } catch (SQLException e) {
+//            System.out.println("ERROR");
+//            logger.error(e.getMessage(), e);
+//            System.out.println("ERROR");
+//            throw e;
+//
+//        }
     }
 
 

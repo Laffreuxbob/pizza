@@ -11,15 +11,15 @@ var app = new Vue({
 
           axios.get('/user/pizza')
           		.then(response => {
-          		    data = response.data
-          		    console.log(data)
-          		    data.forEach(element =>
+          		    pizzas = response.data
+          		    console.log(pizzas)
+          		    pizzas.forEach(element =>
 
           		        console.log(element)
 
           		    );
 
-          		    this.pizzas = response.data;
+          		    this.pizzas = pizzas;
           		});
 
 	},

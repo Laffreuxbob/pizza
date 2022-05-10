@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Crud Pizza Admin</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="/web/js/crudpizza.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../web/css/crudpizza.css" />
+
 </head>
+
 <body>
+
+<h1  id="customtitle">Crud Pizza Admin</h1>
+
+<div id="crudpizza">
+    <form >
+
+        <div>
+            <label for="newname_"> New Name : </label>
+            <input type="text" name="newname" id="newname_" v-model="newpizza.name">
+        </div>
+
+        <div id="ingredientForm">
+            <div v-for="ingredient in ingredients" >
+                <input
+                        type="checkbox"
+                        v-bind:id="ingredient.name"
+                        v-bind:name="ingredient.name"
+                >
+                <label v-bind:for="ingredient.name"> {{ ingredient.name }} </label>
+            </div>
+        </div>
+
+        <!--<div v-for="i in ingredients" id="ingredientForm">
+            <input type="checkbox"
+                   v-bind:id="i.name"
+                   v-bind:name="'i.name['  + i  + ']'"
+                   v-model="newpizza.ingredient" />
+            <label v-bind:for="i.name"> {{ ingredient.name }} </label>
+        </div>-->
+
+
+        <button v-on:click="createPizza()" >Add</button>
+    </form>
+
+</div>
 
 </body>
 </html>

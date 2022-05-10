@@ -21,7 +21,7 @@ public class UserDAO {
 
     public User getUserByEmail(String username) throws SQLException {
 
-        String sqlSelect = "Select username, password FROM user WHERE username ='" + username + "'";
+        String sqlSelect = "Select username, password, role FROM user WHERE username ='" + username + "'";
         Statement stmt = ds.getConnection().createStatement();
         ResultSet rs = stmt.executeQuery(sqlSelect);
 
@@ -29,6 +29,7 @@ public class UserDAO {
             User user = new User();
             user.setUsername(rs.getString(1));
             user.setPassword(rs.getString(2));
+            user.setRole(rs.getString(3));
             return user;
         }else{
             return null;
@@ -37,10 +38,10 @@ public class UserDAO {
 
     public void addUser(User user) throws SQLException {
         String password = passwordEncoder.encode(user.getPassword());
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        String sql = "INSERT INTO user (username, password) VALUES ('" +
-                user.getUsername() + "', '" + password + "');";
-
+        System.out.println("USER DAO addUser");
+        String sql = "INSERT INTO user (username, password, role) VALUES ('" +
+                user.getUsername() + "', '" + password + "', '" + user.getRole() + "');";
+        System.out.println(sql);
         Statement stmt = ds.getConnection().createStatement();
         stmt.executeUpdate(sql);
     }

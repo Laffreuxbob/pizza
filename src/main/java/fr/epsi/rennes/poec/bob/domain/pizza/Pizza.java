@@ -16,11 +16,21 @@ public class Pizza {
         this.ingredient = ingredient;
     }
 
-    public void debug() {
-        System.out.println(this.name);
+    // A PASSER EN LOGGER /!\
+    public String debug() {
+        String pizza = this.name;
+        for (Ingredient ingredient: this.ingredient) {
+            pizza += ingredient.getName() + ", ";
+        }
+        System.out.println(pizza);
+        return pizza;
     }
 
     public String getName() {
         return this.name;
+    }
+
+    public ArrayList<Ingredient> getIngredient() {
+        return ingredient;
     }
 }

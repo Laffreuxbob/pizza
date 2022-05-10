@@ -10,6 +10,7 @@ public class User implements UserDetails {
 
     private String username;
     private String password;
+    private String role;
     private boolean checked = true;
 
 
@@ -17,7 +18,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(UserRole.ROLE_USER);
+        return List.of(UserRole.valueOf(this.role));
     }
 
     @Override
@@ -59,5 +60,16 @@ public class User implements UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    // ================================
+
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

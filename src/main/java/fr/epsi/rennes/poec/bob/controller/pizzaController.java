@@ -21,9 +21,14 @@ public class pizzaController {
 //        return "user/pizza";
 //    }
 
+//    @GetMapping("/user/pizzaObject")
+//    public List<Pizza> getAllPizzaObject() throws SQLException {
+//        return pizzaService.getAllPizzaObject();
+//    }
+
     @GetMapping("/user/pizza")
-    public List<Pizza> getAllPizza() throws SQLException {
-        System.out.println("CONTROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOLLER");
-        return pizzaService.getAllPizza();
+    public List<Pizza> getAllPizzaObject() throws SQLException {
+        System.out.println("PIZZA CONTROLLER getAllPizzaObject");
+        return pizzaService.getAllPizzaObject();
     }
 }

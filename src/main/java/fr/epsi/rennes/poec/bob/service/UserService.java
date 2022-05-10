@@ -2,6 +2,7 @@ package fr.epsi.rennes.poec.bob.service;
 
 import fr.epsi.rennes.poec.bob.dao.UserDAO;
 import fr.epsi.rennes.poec.bob.domain.user.User;
+import fr.epsi.rennes.poec.bob.domain.user.UserRole;
 import fr.epsi.rennes.poec.bob.exception.TechnicalException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -36,6 +37,7 @@ public class UserService implements UserDetailsService {
 
     public void addUser(User user) {
         try {
+            user.setRole(UserRole.ROLE_USER.name());
             userDAO.addUser(user);
         } catch (SQLException e) {
             logger.error(e.getMessage(), e);

@@ -8,17 +8,38 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="/web/js/pizza.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../web/css/pizza.css" />
+
 </head>
 <body>
 
 <div id="allpizza">
 
-    <li> {{ pizzas }} </li>
-    <li v-for="pizza in pizzas">
+    <table id="allpizzatable">
+        <tr id="allpizzatablehead">
+            <th>
+                PIZZA
+            </th>
+            <th>
+                Ingredients
+            </th>
+        </tr>
 
-        {{ pizza.name }} {{ pizza.ingredients }}
+        <tr v-for="pizza in pizzas">
+            <td>
+                {{ pizza.name}}
+            </td>
+            <td>
+                <li v-for="ingredient in pizza.ingredient">
+                    {{ ingredient.name }}
+                </li>
 
-    </li>
+            </td>
+        </tr>
+
+
+    </table>
+
 </div>
 
 

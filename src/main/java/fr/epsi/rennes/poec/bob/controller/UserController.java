@@ -14,7 +14,6 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/public/register")
-
     public void addUser (User user) {
         this.userService.addUser(user);
     }
