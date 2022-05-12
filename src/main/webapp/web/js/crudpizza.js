@@ -4,10 +4,11 @@ var app = new Vue({
 	el: '#crudpizza',
 	data() {
         return {
-            newpizza : {},
+            newpizza : { "name",
+                         "ingredient"},
             ingredients : [],
-            newname_ : [],
-            newingredients_ : []
+//            newname_ : [],
+//            newingredients_ : []
         }
 	},
 	mounted() {
